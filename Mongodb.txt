@@ -1,0 +1,127 @@
+Microsoft Windows [Version 10.0.19045.4780]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Program Files\MongoDB\mongosh-2.3.0-win32-x64\bin>mongosh
+Current Mongosh Log ID: 66da7ff2005e5c9d972710bb
+Connecting to:          mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.3.0
+Using MongoDB:          7.0.14
+Using Mongosh:          2.3.0
+mongosh 2.3.1 is available for download: https://www.mongodb.com/try/download/shell
+
+For mongosh info see: https://www.mongodb.com/docs/mongodb-shell/
+
+------
+   The server generated these startup warnings when booting
+   2024-09-04T09:47:10.130+05:30: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+------
+
+test> use farghana
+switched to db farghana
+farghana> db.msc.insertOne({id:111,name:"nivetha",place:"thuvarankurichy"})
+{
+  acknowledged: true,
+  insertedId: ObjectId('66da8040005e5c9d972710bc')
+}
+farghana> db.msc.insertOne({id:112,name:"farghana",place:"lalgudi"})
+{
+  acknowledged: true,
+  insertedId: ObjectId('66da8075005e5c9d972710bd')
+}
+farghana> db.msc.insertOne({id:113,name:"arun",place:"chennai"})
+{
+  acknowledged: true,
+  insertedId: ObjectId('66da808e005e5c9d972710be')
+}
+farghana> db.msc.find()
+[
+  {
+    _id: ObjectId('66da8040005e5c9d972710bc'),
+    id: 111,
+    name: 'nivetha',
+    place: 'thuvarankurichy'
+  },
+  {
+    _id: ObjectId('66da8075005e5c9d972710bd'),
+    id: 112,
+    name: 'farghana',
+    place: 'lalgudi'
+  },
+  {
+    _id: ObjectId('66da808e005e5c9d972710be'),
+    id: 113,
+farghana>
+    place: 'chennai'
+  }
+]
+farghana> db.msc.updateOne({name:"arun"},{$set:{name:"chaan"}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+farghana> db.msc.find()
+[
+  {
+    _id: ObjectId('66da8040005e5c9d972710bc'),
+    id: 111,
+    name: 'nivetha',
+    place: 'thuvarankurichy'
+  },
+  {
+    _id: ObjectId('66da8075005e5c9d972710bd'),
+    id: 112,
+    name: 'farghana',
+    place: 'lalgudi'
+  },
+  {
+    _id: ObjectId('66da808e005e5c9d972710be'),
+    id: 113,
+    name: 'chaan',
+    place: 'chennai'
+  }
+]
+farghana> db.msc.findOne("$and"[{id:{$gt:50}},{id:{$lt:200}}])
+{
+  _id: ObjectId('66da8040005e5c9d972710bc'),
+  id: 111,
+  name: 'nivetha',
+  place: 'thuvarankurichy'
+}
+farghana> db.msc.find().skip(1)
+[
+  {
+    _id: ObjectId('66da8075005e5c9d972710bd'),
+    id: 112,
+    name: 'farghana',
+    place: 'lalgudi'
+  },
+  {
+    _id: ObjectId('66da808e005e5c9d972710be'),
+    id: 113,
+    name: 'chaan',
+    place: 'chennai'
+  }
+]
+farghana> db.msc.find().sort()
+[
+  {
+    _id: ObjectId('66da8040005e5c9d972710bc'),
+    id: 111,
+    name: 'nivetha',
+    place: 'thuvarankurichy'
+  },
+  {
+    _id: ObjectId('66da8075005e5c9d972710bd'),
+    id: 112,
+    name: 'farghana',
+    place: 'lalgudi'
+  },
+  {
+    _id: ObjectId('66da808e005e5c9d972710be'),
+    id: 113,
+    name: 'chaan',
+    place: 'chennai'
+  }
+]

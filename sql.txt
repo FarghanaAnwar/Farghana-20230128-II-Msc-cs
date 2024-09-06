@@ -1,0 +1,34 @@
+Microsoft Windows [Version 10.0.19045.4780]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\Administrator\Downloads\sqlite-tools-win-x64-3460100>sqlite3 farghana.db
+SQLite version 3.46.1 2024-08-13 09:16:08 (UTF-16 console I/O)
+Enter ".help" for usage hints.
+sqlite> create table teacher(id integer,name varchar(10),salary integer);
+sqlite> insert into teacher(id,name,salary) values(101,'nivi',80);
+sqlite> insert into teacher(id,name,salary) values(102,'farghana',70);
+sqlite> select * from teacher;
+101|nivi|80
+102|farghana|70
+sqlite> insert into teacher(id,name,salary) values(103,'sijitha',60);
+sqlite> .tables
+teacher
+sqlite> .databases
+main: C:\Users\Administrator\Downloads\sqlite-tools-win-x64-3460100\farghana.db r/w
+sqlite> update teacher set salary=90 where id=102;
+sqlite> select * from teacher;
+101|nivi|80
+102|farghana|90
+103|sijitha|60
+sqlite> alter table teacher add state varchar(20);
+sqlite> select * from teacher;
+101|nivi|80|
+102|farghana|90|
+103|sijitha|60|
+sqlite> select * from teacher where salary>=10;
+101|nivi|80|
+102|farghana|90|
+103|sijitha|60|
+sqlite> select * from  teacher limit 2;
+101|nivi|80|
+102|farghana|90|

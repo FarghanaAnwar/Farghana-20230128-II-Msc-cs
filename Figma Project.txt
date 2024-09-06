@@ -1,0 +1,13 @@
+Project Title:Fitness App
+
+About The Project:
+1. Workout Screen: 
+   - Features a calendar interface at the top, allowing users to track their workouts for the week.
+   - Below the calendar is the "Today's Workout" section, highlighting exercises such as Jumping Jacks, Squats, and Bicycle Crunches, with the number of repetitions for each.
+
+2. Login Screen:
+   - Includes fields for email and password input, along with options for "Forgot Password?" and a "Sign Up" link for new users.
+   - The background image of an individual exercising sets the app's tone as a fitness-focused application.
+
+Here is my prototype link:
+https://www.figma.com/proto/FxKd1jmObuRFU2Z2jvD6KS/Untitled?node-id=1-2&node-type=CANVAS&t=DmfDlCkRAHMS0JBY-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A2
